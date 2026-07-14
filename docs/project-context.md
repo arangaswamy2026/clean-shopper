@@ -1,0 +1,53 @@
+# Project Context Document
+**Project:** Clean Shopper
+**Date:** 2026-07-14
+**Source:** CCD Course project brief (`CCDCourse_CleanShopper_ProjectBrief.md`), cross-referenced with the project's `CLAUDE.md` for tech-stack and scope constraints.
+**Version:** 1.0
+
+---
+
+## 1. Problem Statement
+Consumers who want to buy cleaner, non-toxic, environmentally friendly products for their home and family cannot easily verify manufacturer claims. Ingredient lists require expertise to interpret, "clean" and "natural" labeling is frequently misleading or unverified, and researching trustworthy alternatives across multiple sources is fragmented and slow. There is also no persistent place for a shopper's accumulated preferences, such as trusted brands and avoided ingredients, to live and inform future decisions.
+
+## 2. ICP (Ideal Customer Profile)
+A shopper actively trying to replace toxic cleaning products, find personal care items free of harmful chemicals, or stock a pantry with cleaner food options. This person already attempts research on their own, checking labels and cross-referencing multiple sources, but finds the process overwhelming and time-consuming. Over time they build informal preferences, such as brands they trust and ingredients they avoid, but currently have no system to retain or reapply that knowledge to new purchases.
+
+## 3. Pain Points
+- Product labels are confusing, and ingredient lists require specialized expertise to interpret.
+- "Clean" and "natural" claims on packaging are often misleading or unverified.
+- Researching alternatives across multiple sources is fragmented and slow.
+- Preferences built up over time, such as trusted brands and avoided ingredients, have nowhere to live.
+
+## 4. Proposed Solution
+Clean Shopper is a conversational, Claude-backed agent through which a user can:
+- Describe a product they are looking for and receive researched options with reasoning, drawing on real-time web search and ingredient safety databases such as EWG's Skin Deep.
+- Save personal preferences, including ingredients to avoid, trusted brands, and certifications that matter (e.g., EWG Verified, USDA Organic, B Corp).
+- Have those saved preferences automatically applied to every subsequent recommendation.
+- Add recommended products to a shopping cart that persists across sessions.
+- Ask Clean Shopper to compare products side by side and receive a clear recommendation based on saved preferences.
+
+## 5. Success Metrics
+Not defined in source material.
+
+## 6. Design Constraints
+- **Platform:** Web application with a conversational interface, built on React (Vite).
+- **Geography:** Not defined in source material.
+- **Accessibility:** Not defined in source material.
+- **Technical:** Claude API (`claude-sonnet-4-20250514`) for conversational research and ingredient analysis; EWG Skin Deep API for ingredient safety data; Supabase (PostgreSQL) for data persistence; Tailwind CSS for styling; Vercel for deployment. Single-user application with no authentication in V1; local state plus Supabase for persistence.
+- **Other:** This is a course demo project built incrementally over four weeks, phase by phase, per the project's build plan. Out of scope for V1: checkout or payment processing, direct retailer integrations, barcode scanning, user accounts or authentication, and a mobile app.
+
+## 7. Open Questions
+1. What specific criteria or scoring thresholds define a "clean" assessment beyond referencing EWG Skin Deep data?
+2. How many products can be compared at once in the comparison feature?
+3. What is the phase-by-phase build plan for the four-week course structure (referenced in the project's `CLAUDE.md` as `/docs/build-plan.md` but not detailed in the brief)?
+4. How should conflicting signals be handled, for example when a saved trusted brand carries a product containing an avoided ingredient?
+
+## 8. Gaps
+1. **Success Metrics** — The brief does not state how success will be measured (e.g., engagement, accuracy of assessments, user retention). This matters because it will shape which features are prioritized and how "done" is judged for each build phase.
+2. **Accessibility requirements** — No accessibility standard (e.g., WCAG level) is specified. This matters for component design and color/contrast decisions from the outset.
+3. **Geography and regional constraints** — No launch region or localization requirement is stated. This matters because ingredient safety standards and certifications (e.g., USDA Organic) can be region-specific.
+4. **Detailed build plan** — The brief describes only the full V1 feature scope, not the week-by-week breakdown referenced elsewhere in the project. This matters because the project's own conventions require building phase by phase without jumping ahead.
+5. **Visual and brand direction** — No design system, mood, or visual reference is provided in the brief. This matters as a starting point for any UI work.
+
+---
+*Generated by /project-context skill. Add to this document as decisions are made and questions are resolved.*
